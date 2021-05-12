@@ -1,0 +1,32 @@
+# Godot 4+ specific ignores
+.godot/
+*.translation
+*.tmp
+
+# Godot-specific binary export templates and outputs
+export_presets.cfg
+builds/
+dist/
+
+# Python virtual environment and caching
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.pytest_cache/
+
+# OS and Editor ignores
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# Telemetry raw dumps
+logs/*.log
+telemetry/dumps/*.bin
+telemetry/dumps/*.raw
