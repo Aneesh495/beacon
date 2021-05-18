@@ -27,6 +27,10 @@ echo "Using Godot binary: ${GODOT_BIN}"
 "${GODOT_BIN}" --version
 
 echo ""
+echo "=== Refreshing Godot Script Index ==="
+"${GODOT_BIN}" --headless --editor --quit > /dev/null 2>&1 || true
+
+echo ""
 echo "=== Launching Headless Test Suite ==="
 cd "${ROOT_DIR}"
 "${GODOT_BIN}" --headless --no-header -s tests/test_runner.gd
