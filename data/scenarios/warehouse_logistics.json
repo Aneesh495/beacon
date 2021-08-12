@@ -1,0 +1,25 @@
+{
+  "scenario_id": "warehouse_logistics",
+  "name": "Warehouse Logistics Automated Guided Vehicle (AGV) Fleet",
+  "description": "16 AGVs navigating narrow perpendicular rack corridors and depot drop-off bays with multi-agent conflict-based search (CBS) deconfliction.",
+  "duration_sec": 45.0,
+  "grid_bounds": [-50.0, 50.0, -50.0, 50.0],
+  "vehicles": [
+    {"id": "agv_01", "spawn": [-30.0, 0.0, -30.0], "heading": 0.0, "destination": [30.0, -30.0], "speed_limit": 4.0},
+    {"id": "agv_02", "spawn": [-30.0, 0.0, -20.0], "heading": 0.0, "destination": [30.0, -20.0], "speed_limit": 4.0},
+    {"id": "agv_03", "spawn": [-30.0, 0.0, -10.0], "heading": 0.0, "destination": [30.0, -10.0], "speed_limit": 4.0},
+    {"id": "agv_04", "spawn": [-30.0, 0.0, 0.0], "heading": 0.0, "destination": [30.0, 0.0], "speed_limit": 4.0},
+    {"id": "agv_05", "spawn": [-30.0, 0.0, 10.0], "heading": 0.0, "destination": [30.0, 10.0], "speed_limit": 4.0},
+    {"id": "agv_06", "spawn": [-30.0, 0.0, 20.0], "heading": 0.0, "destination": [30.0, 20.0], "speed_limit": 4.0},
+    {"id": "agv_07", "spawn": [-30.0, 0.0, 30.0], "heading": 0.0, "destination": [30.0, 30.0], "speed_limit": 4.0},
+    {"id": "agv_08", "spawn": [30.0, 0.0, -30.0], "heading": 3.14159, "destination": [-30.0, -30.0], "speed_limit": 4.0},
+    {"id": "agv_09", "spawn": [30.0, 0.0, -20.0], "heading": 3.14159, "destination": [-30.0, -20.0], "speed_limit": 4.0},
+    {"id": "agv_10", "spawn": [30.0, 0.0, -10.0], "heading": 3.14159, "destination": [-30.0, -10.0], "speed_limit": 4.0},
+    {"id": "agv_11", "spawn": [30.0, 0.0, 0.0], "heading": 3.14159, "destination": [-30.0, 0.0], "speed_limit": 4.0},
+    {"id": "agv_12", "spawn": [30.0, 0.0, 10.0], "heading": 3.14159, "destination": [-30.0, 10.0], "speed_limit": 4.0},
+    {"id": "agv_13", "spawn": [30.0, 0.0, 20.0], "heading": 3.14159, "destination": [-30.0, 20.0], "speed_limit": 4.0},
+    {"id": "agv_14", "spawn": [30.0, 0.0, 30.0], "heading": 3.14159, "destination": [-30.0, 30.0], "speed_limit": 4.0},
+    {"id": "agv_15", "spawn": [0.0, 0.0, -40.0], "heading": 1.5708, "destination": [0.0, 40.0], "speed_limit": 4.0},
+    {"id": "agv_16", "spawn": [0.0, 0.0, 40.0], "heading": -1.5708, "destination": [0.0, -40.0], "speed_limit": 4.0}
+  ]
+}

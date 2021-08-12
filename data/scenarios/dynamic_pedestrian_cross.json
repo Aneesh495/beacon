@@ -1,0 +1,26 @@
+{
+  "scenario_id": "dynamic_pedestrian_cross",
+  "name": "Dynamic Pedestrian Jaywalk & Autonomous Collision Avoidance",
+  "description": "Cruising autonomous vehicle encounters an unexpected dynamic pedestrian running across the active lane, triggering perception clustering, time-optimal emergency stop, and replanning.",
+  "duration_sec": 15.0,
+  "vehicles": [
+    {"id": "cruising_car", "spawn": [0.0, 0.0, 0.0], "heading": 0.0, "destination": [120.0, 0.0], "speed_limit": 14.0}
+  ],
+  "obstacles": [
+    {
+      "id": "pedestrian_runner",
+      "type": "dynamic",
+      "spawn_pos": [45.0, 0.0, 8.0],
+      "velocity": [0.0, 0.0, -2.5],
+      "radius": 0.5
+    }
+  ],
+  "scheduled_events": [
+    {
+      "time_sec": 2.5,
+      "event_type": "emergency_stop",
+      "target_agent": "cruising_car",
+      "reason": "Pedestrian crossed minimum safety envelope"
+    }
+  ]
+}

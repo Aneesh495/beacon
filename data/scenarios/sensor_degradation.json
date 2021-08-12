@@ -1,0 +1,19 @@
+{
+  "scenario_id": "sensor_degradation",
+  "name": "Tunnel GPS Blackout & Dead Reckoning Resilience",
+  "description": "Autonomous vehicle enters a 120-meter tunnel with complete satellite GNSS blackout, testing 15-state Error-State EKF strapdown inertial dead reckoning and tire slip compensation.",
+  "duration_sec": 25.0,
+  "vehicles": [
+    {"id": "test_vehicle", "spawn": [0.0, 0.0, 0.0], "heading": 0.0, "destination": [160.0, 0.0], "speed_limit": 10.0}
+  ],
+  "scheduled_events": [
+    {
+      "time_sec": 3.0,
+      "event_type": "sensor_fault",
+      "target_agent": "test_vehicle",
+      "sensor_name": "gnss",
+      "fault_type": "blackout",
+      "duration_sec": 12.0
+    }
+  ]
+}

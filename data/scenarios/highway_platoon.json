@@ -1,0 +1,22 @@
+{
+  "scenario_id": "highway_platoon",
+  "name": "Highway Platoon Adaptive Cruise Control & Emergency Stop",
+  "description": "6 vehicles connected via V2X low-latency sidelink maintaining a 0.6s inter-vehicle headway at 22 m/s, followed by lead vehicle maximum emergency deceleration.",
+  "duration_sec": 20.0,
+  "vehicles": [
+    {"id": "platoon_lead", "spawn": [100.0, 0.0, 0.0], "heading": 0.0, "destination": [350.0, 0.0], "speed_limit": 22.0},
+    {"id": "platoon_02",   "spawn": [82.0, 0.0, 0.0],  "heading": 0.0, "destination": [330.0, 0.0], "speed_limit": 22.0},
+    {"id": "platoon_03",   "spawn": [64.0, 0.0, 0.0],  "heading": 0.0, "destination": [310.0, 0.0], "speed_limit": 22.0},
+    {"id": "platoon_04",   "spawn": [46.0, 0.0, 0.0],  "heading": 0.0, "destination": [290.0, 0.0], "speed_limit": 22.0},
+    {"id": "platoon_05",   "spawn": [28.0, 0.0, 0.0],  "heading": 0.0, "destination": [270.0, 0.0], "speed_limit": 22.0},
+    {"id": "platoon_06",   "spawn": [10.0, 0.0, 0.0],  "heading": 0.0, "destination": [250.0, 0.0], "speed_limit": 22.0}
+  ],
+  "scheduled_events": [
+    {
+      "time_sec": 5.0,
+      "event_type": "emergency_stop",
+      "target_agent": "platoon_lead",
+      "reason": "Sudden stationary obstacle on highway lane"
+    }
+  ]
+}

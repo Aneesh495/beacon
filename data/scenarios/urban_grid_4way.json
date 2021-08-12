@@ -1,0 +1,24 @@
+{
+  "scenario_id": "urban_grid_4way",
+  "name": "Urban Grid 4-Way Unsignalized Intersection",
+  "description": "12 autonomous vehicles navigating an unsignalized orthogonal intersection via V2X spatio-temporal reservation protocol without stopping or colliding.",
+  "duration_sec": 30.0,
+  "intersection": {
+    "center": [0.0, 0.0],
+    "conflict_radius": 15.0
+  },
+  "vehicles": [
+    {"id": "north_0", "spawn": [0.0, 0.0, -60.0], "heading": 1.5708, "destination": [0.0, 60.0], "speed_limit": 12.0},
+    {"id": "north_1", "spawn": [0.0, 0.0, -80.0], "heading": 1.5708, "destination": [0.0, 60.0], "speed_limit": 12.0},
+    {"id": "north_2", "spawn": [0.0, 0.0, -100.0], "heading": 1.5708, "destination": [0.0, 60.0], "speed_limit": 12.0},
+    {"id": "south_0", "spawn": [0.0, 0.0, 60.0], "heading": -1.5708, "destination": [0.0, -60.0], "speed_limit": 12.0},
+    {"id": "south_1", "spawn": [0.0, 0.0, 80.0], "heading": -1.5708, "destination": [0.0, -60.0], "speed_limit": 12.0},
+    {"id": "south_2", "spawn": [0.0, 0.0, 100.0], "heading": -1.5708, "destination": [0.0, -60.0], "speed_limit": 12.0},
+    {"id": "east_0", "spawn": [60.0, 0.0, 0.0], "heading": 3.14159, "destination": [-60.0, 0.0], "speed_limit": 10.0},
+    {"id": "east_1", "spawn": [80.0, 0.0, 0.0], "heading": 3.14159, "destination": [-60.0, 0.0], "speed_limit": 10.0},
+    {"id": "east_2", "spawn": [100.0, 0.0, 0.0], "heading": 3.14159, "destination": [-60.0, 0.0], "speed_limit": 10.0},
+    {"id": "west_0", "spawn": [-60.0, 0.0, 0.0], "heading": 0.0, "destination": [60.0, 0.0], "speed_limit": 10.0},
+    {"id": "west_1", "spawn": [-80.0, 0.0, 0.0], "heading": 0.0, "destination": [60.0, 0.0], "speed_limit": 10.0},
+    {"id": "west_2", "spawn": [-100.0, 0.0, 0.0], "heading": 0.0, "destination": [60.0, 0.0], "speed_limit": 10.0}
+  ]
+}
