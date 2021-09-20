@@ -1,0 +1,49 @@
+name: Beacon CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  verification:
+    name: Headless Verification & Static Analysis
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Verify Zero Em Dash Policy
+        run: |
+          python3 scripts/check_no_em_dash.py
+
+      - name: Verify Auxiliary Analytical Tooling
+        run: |
+          python3 tools/frenet_trajectory_analyzer.py
+          python3 tools/scenario_synthesizer.py roundabout /tmp/test_roundabout.json 6
+          test -f /tmp/test_roundabout.json
+
+      - name: Install Godot Engine 4.x Headless
+        run: |
+          sudo apt-get update && sudo apt-get install -y wget unzip
+          wget https://github.com/godotengine/godot/releases/download/4.2.2-stable/Godot_v4.2.2-stable_linux.x86_64.zip -O godot.zip
+          unzip godot.zip
+          sudo mv Godot_v4.2.2-stable_linux.x86_64 /usr/local/bin/godot
+          chmod +x /usr/local/bin/godot
+          godot --version
+
+      - name: Execute Beacon Headless Test Suite
+        run: |
+          chmod +x scripts/run_tests.sh
+          ./scripts/run_tests.sh
+
+      - name: Execute Headless Digital Twin Simulation
+        run: |
+          godot --headless --path . --quit-after 60
