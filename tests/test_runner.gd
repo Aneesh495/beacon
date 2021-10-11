@@ -55,6 +55,8 @@ func _run_all_tests() -> void:
 		"res://tests/unit/test_fleet_dispatch.gd",
 		"res://tests/unit/test_intersection_manager.gd",
 		"res://tests/unit/test_v2x_mesh.gd",
+		"res://tests/unit/test_kalman_smoother.gd",
+		"res://tests/unit/test_convex_polygon_2d.gd",
 		"res://tests/integration/test_scenario_integration.gd",
 		"res://tests/stress/test_benchmark_stress.gd"
 	]
