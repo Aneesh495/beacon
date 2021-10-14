@@ -6,8 +6,8 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Engine: Godot 4.x](https://img.shields.io/badge/Godot-4.x-478cbf?logo=godotengine&logoColor=white)](https://godotengine.org)
-[![Tests: 385 Passing](https://img.shields.io/badge/Tests-385%20Passing-brightgreen.svg)](tests/)
-[![Suites: 21 Verified](https://img.shields.io/badge/Suites-21%20Verified-blue.svg)](tests/)
+[![Tests: 395 Passing](https://img.shields.io/badge/Tests-395%20Passing-brightgreen.svg)](tests/)
+[![Suites: 23 Verified](https://img.shields.io/badge/Suites-23%20Verified-blue.svg)](tests/)
 [![Zero Em Dash](https://img.shields.io/badge/Zero%20Em%20Dash-Enforced-success.svg)](scripts/check_no_em_dash.py)
 
 </div>
@@ -57,6 +57,7 @@ flowchart TD
 
 ### 1. State Estimation & Sensor Fusion
 - **15-State Error-State Extended Kalman Filter (ES-EKF)**: High-rate strapdown inertial navigation system (INS) integrating specific force and angular velocity, error-state transition Jacobian $F_x$, discrete process noise propagation, 3D RTK GNSS position updates, wheel speed odometry updates, Mahalanobis $\chi^2$ outlier rejection gating, and Joseph-stabilized covariance updates.
+- **Rauch-Tung-Striebel (RTS) Optimal Kalman Smoother**: Non-causal backward fixed-interval smoothing pass reducing state estimation variance below causal filter limits ($P_{k|N} \le P_{k|k}$).
 - **Unscented Kalman Filter (UKF)**: Van der Merwe scaled unscented transform with 11 sigma points propagating non-linear vehicle bicycle kinematics with dynamic side-slip angles.
 - **SE(2) Pose Graph SLAM**: Gauss-Newton non-linear least squares optimization over relative odometry constraints and loop-closure measurements.
 
@@ -82,7 +83,7 @@ flowchart TD
 
 ## Verification & Test Results
 
-Beacon includes 21 automated verification suites covering 385 assertions. The entire suite runs headlessly via Godot 4.x CLI:
+Beacon includes 23 automated verification suites covering 395 assertions. The entire suite runs headlessly via Godot 4.x CLI:
 
 ```bash
 ./scripts/run_tests.sh
@@ -113,16 +114,18 @@ Beacon includes 21 automated verification suites covering 385 assertions. The en
 -> Running Suite: test_fleet_dispatch                 [PASS] (11 assertions)
 -> Running Suite: test_intersection_manager           [PASS] (9 assertions)
 -> Running Suite: test_v2x_mesh                       [PASS] (9 assertions)
+-> Running Suite: test_kalman_smoother                [PASS] (3 assertions)
+-> Running Suite: test_convex_polygon_2d              [PASS] (7 assertions)
 -> Running Suite: test_scenario_integration           [PASS] (17 assertions)
 -> Running Suite: test_benchmark_stress               [PASS] (10 assertions)
 
 ========================================================================
    VERIFICATION SUMMARY REPORT   
 ========================================================================
-  Execution Duration: 6.783 seconds
-  Suites Executed:    21 (Passed: 21, Failed: 0)
-  Total Assertions:   385
-  Passed Assertions:  385
+  Execution Duration: 6.963 seconds
+  Suites Executed:    23 (Passed: 23, Failed: 0)
+  Total Assertions:   395
+  Passed Assertions:  395
   Failed Assertions:  0
 
 ALL TEST SUITES PASSED FLAWLESSLY.
