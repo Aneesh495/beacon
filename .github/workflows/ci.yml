@@ -41,6 +41,7 @@ jobs:
 
       - name: Execute Beacon Headless Test Suite
         run: |
+          godot --headless --path . --import --quit || true
           chmod +x scripts/run_tests.sh
           ./scripts/run_tests.sh
 
